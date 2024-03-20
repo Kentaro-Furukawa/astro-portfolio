@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 
 interface Props {
 	title?: string | undefined;
@@ -26,6 +27,7 @@ const {
 	rel="stylesheet"
 />
 <link rel="manifest" href="manifest.json">
+<GoogleAnalytics />
 <script is:inline>
 	// This code is inlined in the head to make dark mode instant & blocking.
 	const getThemePreference = () => {

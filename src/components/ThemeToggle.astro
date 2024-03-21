@@ -78,6 +78,9 @@ import Icon from './Icon.astro';
 			const setTheme = (dark: boolean) => {
 				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
 				button.setAttribute('aria-pressed', String(dark));
+				if (typeof localStorage !== 'undefined') {
+					localStorage.setItem('theme', dark ? 'dark' : 'light');
+				}
 			};
 
 			// Toggle the theme when a user clicks the button.
@@ -88,6 +91,9 @@ import Icon from './Icon.astro';
 		}
 
 		isDark() {
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme') === 'dark';
+			}
 			return document.documentElement.classList.contains('theme-dark');
 		}
 	}

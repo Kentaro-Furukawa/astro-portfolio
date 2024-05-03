@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/partytown": "^2.0.4",
-    "astro": "^4.4.6"
+    "astro": "^4.4.6",
+    "astrojs-service-worker": "^2.0.0"
   }
 }
